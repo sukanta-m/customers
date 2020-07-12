@@ -16,7 +16,7 @@ import { fetchCustomersAction, deleteCustomerAction } from "../../modules/action
 import { createAddressAction } from "../../modules/actions/address";
 import styled from "styled-components";
 
-const CustomerLists = ({
+export const CustomerLists = ({
   fetchCustomers,
   fetching,
   customers,
