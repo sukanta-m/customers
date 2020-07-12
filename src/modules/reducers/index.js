@@ -1,5 +1,7 @@
-import productReducer from "./product";
+import customerReducer from "./customer";
+import addressReducer from "./address";
 
 export default {
-  product: productReducer
+  customer: customerReducer,
+  address: addressReducer
 };

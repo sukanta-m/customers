@@ -1,3 +1,34 @@
 {
-  "products": []
+  "customers": [
+    {
+      "name": "SUkanta Mangal",
+      "age": 32,
+      "angular": "male",
+      "createdAt": "2020-07-12T05:00:55.954Z",
+      "updatedAt": "2020-07-12T05:05:07.467Z",
+      "id": 1
+    }
+  ],
+  "addresses": [
+    {
+      "street1": "s1",
+      "street2": "s2",
+      "city": "city",
+      "state": "state",
+      "country": "country",
+      "pin": 1112113,
+      "customerId": "1",
+      "id": 2
+    },
+    {
+      "street1": "s2",
+      "street2": "s222",
+      "city": "balesore",
+      "state": "odisha",
+      "country": "india",
+      "pin": 756033,
+      "customerId": "1",
+      "id": 3
+    }
+  ]
 }

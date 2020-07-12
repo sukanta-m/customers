@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Form, Button, InputNumber, Input } from "antd";
+import { Form, Button, Select, Input, InputNumber } from "antd";
 import { StyledForm } from "./style";
 
-const ProductForm = ({
+const CustomerForm = ({
   onSubmit,
-  product = {}
+  customer = {}
 }) => {
   /*eslint-disable no-template-curly-in-string */
   const validateMessages = {
@@ -15,7 +15,7 @@ const ProductForm = ({
     }
   };
 
-  const { name, description, price, quantity } = product;
+  const { name, age, angular } = customer;
 
   return (
     <StyledForm
@@ -28,24 +28,25 @@ const ProductForm = ({
       <Form.Item label="Name" name="name" rules={[{required: true}]} initialValue={name}>
         <Input/>
       </Form.Item>
-      <Form.Item label="Description" name="description" rules={[{required: true}]} initialValue={description}>
-        <Input.TextArea/>
-      </Form.Item>
-      <Form.Item label="Price" name="price" rules={[{required: true, type: 'number'}]} initialValue={price}>
+      <Form.Item label="Age" name="age" rules={[{required: true, type: 'number'}]} initialValue={age}>
         <InputNumber/>
       </Form.Item>
-      <Form.Item label="Quantity" name="quantity" rules={[{required: true,  type: 'number'}]} initialValue={quantity}>
-        <InputNumber/>
+      <Form.Item label="Angular" name="angular" rules={[{required: true}]} initialValue={angular}>
+        <Select>
+          <Select.Option value="male">Male</Select.Option>
+          <Select.Option value="female">Female</Select.Option>
+          <Select.Option value="both">Can't say</Select.Option>
+        </Select>
       </Form.Item>
       <Form.Item wrapperCol={{ span: 24 }} style={{textAlign: "center"}}>
-        <Button htmlType="submit" type="primary" style={{background: "black", color: "white"}}>{product.id ? "Update" : "Create"}</Button>
+        <Button htmlType="submit" type="primary" style={{background: "black", color: "white"}}>{customer.id ? "Update" : "Create"}</Button>
       </Form.Item>
     </StyledForm>
   )
 };
 
-ProductForm.propTypes = {
+CustomerForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  product: PropTypes.object
+  customer: PropTypes.object
 };
-export default ProductForm;
+export default CustomerForm;

@@ -7,7 +7,7 @@ const Header = () => {
     <StyledHeader isMobile={window.isMobile}>
       <div className="menu">
         <div className="topnav" id="myTopnav">
-          <NavLink to="/">Products</NavLink>
+          <NavLink to="/">Customers</NavLink>
         </div>
       </div>
     </StyledHeader>

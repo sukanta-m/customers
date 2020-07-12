@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { get } from "lodash";
 import { message, Spin } from "antd";
-import ProductForm from "./form";
-import { createProductAction } from "../../modules/actions/product";
+import CustomerForm from "./form";
+import { createCustomerAction } from "../../modules/actions/customer";
 
-const CreateProduct = ({
-  createProduct,
+const CreateCustomer = ({
+  createCustomer,
   upserting,
   history
 }) => {
@@ -18,32 +18,32 @@ const CreateProduct = ({
       createdAt: date,
       updatedAt: date
     }
-    createProduct(params).then(res => {
+    createCustomer(params).then(res => {
       message.success("Created successfully");
-      history.push("/products");
+      history.push("/customers");
     });
   }
 
   return (
     <div>
       {upserting && <Spin/>}
-      <h1>Create New product</h1>
-      <ProductForm onSubmit={onSave}/>
+      <h1>Create New customer</h1>
+      <CustomerForm onSubmit={onSave}/>
     </div>
   )
 };
 
-CreateProduct.defaultProps = {
+CreateCustomer.defaultProps = {
   upserting: false
 };
 
-CreateProduct.propTypes = {
-  createProduct: PropTypes.func.isRequired,
+CreateCustomer.propTypes = {
+  createCustomer: PropTypes.func.isRequired,
   upserting: PropTypes.bool
 };
 
 export default connect(state => ({
-  upserting: get(state, "product.upserting", false)
+  upserting: get(state, "customer.upserting", false)
 }), {
-  createProduct: createProductAction
-})(CreateProduct);
+  createCustomer: createCustomerAction
+})(CreateCustomer);

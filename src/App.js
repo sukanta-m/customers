@@ -9,10 +9,10 @@ import Progress from "./pages/sharedComponents/Progress";
 import styled from "styled-components";
 import 'antd/dist/antd.css'
 
-const ProductLists = lazy(() => import("./pages/Products"));
-const NewProductPage = lazy(() => import("./pages/Products/new"));
-const ShowProductPage = lazy(() => import("./pages/Products/show"));
-const EditProductPage = lazy(() => import("./pages/Products/edit"));
+const CustomerLists = lazy(() => import("./pages/Customer"));
+const NewCustomerPage = lazy(() => import("./pages/Customer/new"));
+const ShowCustomerPage = lazy(() => import("./pages/Customer/show"));
+const EditCustomerPage = lazy(() => import("./pages/Customer/edit"));
 
 function App() {
   return (
@@ -31,11 +31,11 @@ const Router = () => {
   return (
     <Suspense fallback={<Progress />}>
       <Switch>
-        <Route exact path="/" component={ProductLists} />
-        <Route exact path="/products" component={ProductLists} />
-        <Route exact path="/products/new" component={NewProductPage} />
-        <Route exact path="/products/:id" component={ShowProductPage} />
-        <Route exact path="/products/:id/edit" component={EditProductPage} />
+        <Route exact path="/" component={CustomerLists} />
+        <Route exact path="/customers" component={CustomerLists} />
+        <Route exact path="/customers/new" component={NewCustomerPage} />
+        <Route exact path="/customers/:id" component={ShowCustomerPage} />
+        <Route exact path="/customers/:id/edit" component={EditCustomerPage} />
       </Switch>
     </Suspense>
   );
