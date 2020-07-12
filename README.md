@@ -1,13 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## install
-   ```npm install -g json-server``` and run ``` json-server --watch db.json ``` in separate terminal
+   ```npm install -g json-server``` and run ``` json-server --port 3001 --watch db.json ``` in separate terminal
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `env variables`
-add env variable ```REACT_APP_HOST_URL=< api host url >``` in `.env` file in root dir<br />
+add env variable ```REACT_APP_HOST_URL=http://localhost:3001``` in `.env` file in root dir<br />
 
 ### `yarn start`
 
